@@ -40,7 +40,7 @@ maximum image width = data-width
 maximum image height = data-height  
 using canvas or base64 = data-canvas (true - canvas, false - base64)
 
-If you want to use canvas, don't forget to put name file in your file input. Or if you use base64, u don't need to do it.
+If you want to use canvas, don't forget to put name field in your file input. Or if you use base64, u don't need to do it.
 
 ```html
 <div class="ph-image-crop" data-ratio="300/100" data-canvas="true" data-width="300" data-height="100" >

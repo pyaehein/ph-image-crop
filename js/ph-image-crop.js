@@ -4,7 +4,7 @@ var removeButton = $(".remove-button")
 var imageFile = $(".image-file")
 var cropModal = $("#ph-image-crop-modal")
 var imgThumbnail = $(".ph-thumbnail")
-var currentImage, currentInput, currentRatio = 1, currentWidth = 1, currentHeight = 1;
+var currentImage, currentInput, currentSelectInput, currentRatio = 1, currentWidth = 1, currentHeight = 1, currentCanvas = 'false';
 
 $(document).ready(function() {
     removeButton.on("click", function() {
@@ -28,6 +28,7 @@ $(document).ready(function() {
         currentRatio = $(this).parent().parent().attr('data-ratio')
         currentWidth = $(this).parent().parent().attr('data-width')
         currentHeight = $(this).parent().parent().attr('data-height')
+        currentCanvas = $(this).parent().parent().attr('data-canvas')
         cropModal.modal("show")
     })
 
@@ -53,6 +54,8 @@ $(document).ready(function() {
         currentRatio = $(this).parent().parent().parent().attr('data-ratio')
         currentWidth = $(this).parent().parent().parent().attr('data-width')
         currentHeight = $(this).parent().parent().parent().attr('data-height')
+        currentCanvas = $(this).parent().parent().parent().attr('data-canvas')
+        currentSelectInput = $(this)
         cropModal.modal("show")
     })
 
@@ -65,7 +68,12 @@ $(document).ready(function() {
     }).on("hidden.bs.modal", function() {
         var dataURL = cropImage.cropper("getCroppedCanvas").toDataURL("image/jpeg");
         currentImage.attr("src", dataURL)
-        currentInput.val(dataURL)
+        if(currentCanvas === 'true') {
+            currentInput.val(cropImage.cropper("getCropBoxData "))
+        } else {
+            currentInput.val(dataURL)
+            currentSelectInput.val('')
+        }
         cropImage.cropper("destroy")
     })
 

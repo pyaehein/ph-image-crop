@@ -30,10 +30,20 @@ and use image id as "crop-image"
     </div>
 </div>
 ```
+##
+Use this code for preview image. If you want to set old image, set it in old-thumbnail's src.  
 
-Use this code for preview image. For cropping ratio, maximum image width and height can be set as data attribute. If you want to set old image, set it in old-thumbnail's src. Hidden input is your result image's base64 code.
+For image cropping and some settings  
+
+ratio = data-ratio,  
+maximum image width = data-width  
+maximum image height = data-height  
+using canvas or base64 = data-canvas (true - canvas, false - base64)
+
+If you want to use canvas, don't forget to put name file in your file input. Or if you use base64, u don't need to do it.
+
 ```html
-<div class="ph-image-crop" data-ratio="300/100" data-width="300" data-height="100" >
+<div class="ph-image-crop" data-ratio="300/100" data-canvas="true" data-width="300" data-height="100" >
     <div class="ph-img-thumbnail" style="padding-bottom: 10px">
         <img class="old-thumbnail" src="">
         <img class="ph-thumbnail">
@@ -44,7 +54,7 @@ Use this code for preview image. For cropping ratio, maximum image width and hei
         <label class="btn btn-default">
             <span class="select-image">Select an image</span>
             <span class="change-image">Change</span>
-            <input class="image-file" type="file" accept="image/*">
+            <input class="image-file" name="ph_image_file" type="file" accept="image/*">
         </label>
         <button class="btn btn-default crop-button">Crop</button>
         <button class="btn btn-default remove-button">Remove</button>

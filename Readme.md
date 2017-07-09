@@ -1,5 +1,5 @@
 # PH Image Crop in Modal Box 
-This plug-in need jQuery with Bootstrap
+This plug-in need jQuery, Bootstrap and Cropper
 
 
 ### Usage

@@ -31,14 +31,14 @@ and use image id as "crop-image"
 </div>
 ```
 
-Use this code for preview image. If you want to set old image, set it in old-thumbnail's src. Hidden input is your result image's base64 code.
+Use this code for preview image. For cropping ratio, maximum image width and height can be set as data attribute. If you want to set old image, set it in old-thumbnail's src. Hidden input is your result image's base64 code.
 ```html
-<div class="ph-image-crop">
+<div class="ph-image-crop" data-ratio="300/100" data-width="300" data-height="100" >
     <div class="ph-img-thumbnail" style="padding-bottom: 10px">
         <img class="old-thumbnail" src="">
         <img class="ph-thumbnail">
         <img class="base-thumbnail">
-        <input class="ph-image" type="hidden" name="ph_images[]">
+        <input class="ph-image"  type="hidden" name="ph_images[]">
     </div>
     <div>
         <label class="btn btn-default">

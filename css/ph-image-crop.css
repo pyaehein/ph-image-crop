@@ -1,0 +1,14 @@
+img {
+    max-width: 100%
+}
+
+.ph-image-crop > .ph-img-thumbnail > .base-thumbnail,
+.ph-image-crop > div > label > .change-image,
+.ph-image-crop > div > .crop-button,
+.ph-image-crop > div > .remove-button {
+    display: none
+}
+
+.ph-image-crop > div > label > .image-file {
+    display: none !important
+}

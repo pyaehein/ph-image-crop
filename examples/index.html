@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PH Image Crop</title>
+    <style>
+        body {
+            padding: 30px;
+        }
+    </style>
+    <link rel="stylesheet" href="../plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/cropper-master/dist/cropper.min.css">
+</head>
+<body>
+    <div id="abc"></div>
+    <div class="test"></div>
+    <div class="test"></div>
+
+    <div class="modal fade" id="ph-image-crop-modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div>
+                        <img style="max-width: 100%" id="crop-image">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Okay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="../plugins/jquery/jquery-3.2.1.min.js"></script>
+<script src="../plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../plugins/cropper-master/dist/cropper.min.js"></script>
+<script src="../js/ph-image-crop.js"></script>
+
+    <script>
+        $('#abc').phImageCrop({
+            defaultImage: '',
+            type: 'canvas',
+            name: 'my_abc_image',
+            fileName: 'my_abc', //File name is only need in type = canvas
+            cropper: {
+                aspectRatio: 300/300,
+                minCropBoxWidth: 300,
+                minCropBoxHeight: 300
+            }
+        })
+    </script>
+    <script>
+        $('.test').phImageCrop({
+            defaultImage: '',
+            type: 'base64',
+            name: 'test_images[]',
+            cropper: {
+                aspectRatio: 300/100,
+                minCropBoxWidth: 300,
+                minCropBoxHeight: 100
+            }
+        })
+    </script>
+</body>
+</html>

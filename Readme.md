@@ -40,7 +40,7 @@ If you want to use with base64
 $('.image-crop').phImageCrop({
     defaultImage: '',
     type: 'base64',
-    name: 'test_images[]',
+    name: 'my_abc_image[]',
     cropper: {
         aspectRatio: 300/100,
         minCropBoxWidth: 300,
